@@ -1,0 +1,174 @@
+:root {
+  --primaryColor: #076297;
+  --secondaryColor: #d1e6f0;
+  --blue-color: rgb(0, 128, 255);
+  --whiteColor: #fff;
+  --blackColor: #222;
+  --greyColor: #f5f5f5;
+}
+body {
+  font-family: poppins;
+  background-color: var(--secondaryColor);
+}
+/* login form */
+.loginform-container {
+  background-color: var(--greyColor);
+  width: 600px;
+  padding: 20px;
+  margin-top: 5%;
+  margin-left: 30%;
+  position: fixed;
+  border-radius: 12px;
+  box-shadow: rgba(33, 34, 35, 0.2) 0px 8px 24px;
+}
+h2 {
+  /* background-color: #076297; */
+  width: 300px;
+  margin: 0 40%;
+  font-size: 28px;
+  color: var(--primaryColor);
+}
+.close-btn {
+  font-size: 30px;
+  margin: 0 95%;
+  color: var(--primaryColor);
+}
+.close-btn a .close {
+  color: var(--primaryColor);
+}
+.close-btn a .close:hover {
+  box-shadow: rgba(25, 25, 26, 0.2) 0px 8px 24px;
+}
+.loginform-container form {
+  /* background-color: red; */
+  padding: 20px;
+  margin-top: 20px;
+}
+.loginform-container .fields {
+  /* background-color: yellow; */
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 9%;
+}
+
+.input-field label {
+  font-size: 20px;
+  color: var(--primaryColor);
+}
+.input-field input,
+select {
+  padding: 10px;
+  background-color: var(--whiteColor);
+  width: 400px;
+  font-size: 20px;
+  border: 1px solid black;
+  border-radius: 6px;
+  margin-top: 5px;
+  color: var(--primaryColor);
+}
+
+.input-field {
+  /* background-color: #076297; */
+  width: 100%;
+  margin-top: 20px;
+}
+.forget-pass {
+  margin: 20px 60px;
+}
+.forget-pass a {
+  text-decoration: none;
+  color: var(--blue-color);
+}
+.forget-pass a:hover {
+  text-decoration: underline;
+}
+.submit-btn {
+  /* background-color: #076297; */
+  margin-left: 40%;
+  width: 100px;
+}
+.submit-btn input {
+  color: var(--whiteColor);
+  padding: 10px 50px;
+  font-size: 20px;
+  border: 1px solid black;
+  border-radius: 6px;
+  margin-top: 20px;
+  background-color: var(--primaryColor);
+}
+
+.link {
+  /* background-color: var(--primaryColor); */
+  width: 600px;
+  margin-top: 20px;
+  margin-left: 50px;
+  color: var(--primaryColor);
+}
+.link a {
+  text-decoration: none;
+  color: var(--blue-color);
+}
+.link a:hover {
+  text-decoration: underline;
+}
+
+/* user register form */
+.userform-container {
+  background-color: var(--greyColor);
+  width: 1200px;
+  padding: 20px;
+  margin-top: 5px;
+  margin-left: 10%;
+  position: fixed;
+  border-radius: 12px;
+  box-shadow: rgba(33, 34, 35, 0.2) 0px 8px 24px;
+}
+.userform-container form {
+  /* background-color: red; */
+  padding: 20px 50px;
+}
+.userform-container .fields {
+  /* background-color: yellow; */
+  display: flex;
+  flex-wrap: wrap;
+}
+.userform-container .fields .input-field {
+  /* background-color: #076297;  */
+  width: 500px;
+  margin-left: 50px;
+}
+/* doctor signup form */
+.doctorform-container {
+  background-color: var(--greyColor);
+  width: 100%;
+  padding: 20px 0;
+  top: 5px;
+  left: 2px;
+  right: 2px;
+  position: relative;
+  border-radius: 12px;
+  box-shadow: rgba(33, 34, 35, 0.2) 0px 8px 24px;
+}
+.doctorform-container form {
+  /* background-color: red; */
+  padding: 20px 20px;
+}
+.doctorform-container .fields {
+  /* background-color: yellow; */
+  display: flex;
+  flex-wrap: wrap;
+}
+.doctorform-container .fields .input-field {
+  /* background-color: #076297;  */
+  width: 460px;
+  margin-left: 20px;
+}
+.eyeclose,
+.eyeopen,
+.ceyeclose,
+.ceyeopen {
+  font-size: 20px;
+}
+.hide {
+  display: none;
+}

@@ -1,0 +1,233 @@
+:root {
+  --primaryColor: #076297;
+  --secondaryColor: #d1e6f0;
+  --blue-color: rgb(0, 128, 255);
+  --whiteColor: #fff;
+  --blackColor: #222;
+  --greyColor: #f5f5f5;
+  --gold:#CC9A33;
+}
+body {
+  font-family: poppins;
+  background-color: var(--secondaryColor);
+}
+/* sidebar section */
+.sidebar {
+  height: 700px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 2%;
+  background-color: var(--primaryColor);
+  color: var(--whiteColor);
+}
+.logo {
+  width: 250px;
+  height: 100px;
+}
+.sidebar-menus {
+  display: flex;
+  flex-direction: column;
+}
+.sidebar-menus a,
+.sidebar-logout a {
+  padding: 5% 8%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  text-decoration: none;
+  color: var(--whiteColor);
+}
+.sidebar-menus a ion-icon,
+.sidebar-logout a ion-icon {
+  font-size: 20px;
+}
+
+.sidebar-menus a:hover,
+.sidebar-logout a:hover {
+  background-color: var(--secondaryColor);
+  border-radius: 50px;
+  color: var(--primaryColor);
+}
+
+/* main section */
+.main {
+  background-color: var(--secondaryColor);
+  width: 100%;
+  margin-left: 20%;
+  max-width: 77%;
+}
+.main .header {
+  background-color: var(--whiteColor);
+  padding: 10px;
+  border-radius: 6px;
+  margin-left: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.search input {
+  font-size: 15px;
+  padding: 5px 20px;
+  width: 400px;
+  border-radius: 6px;
+  border: 0.5px solid black;
+}
+.main .search .search-btn {
+  width: 100px;
+  background-color: var(--primaryColor);
+  color: var(--whiteColor);
+  border: none;
+}
+.profile {
+  background-color: var(--primaryColor);
+  width: 130px;
+  border: none;
+  border-radius: 40px;
+  display: flex;
+  padding: 2px 0;
+  justify-content: space-between;
+}
+.profile a {
+  text-decoration: none;
+  color: var(--whiteColor);
+  margin-right: 5px;
+  /* background-color: red; */
+  height: 20px;
+  padding: 5px 0;
+  font-size: 20px;
+}
+.profile img {
+  margin-left: 5px;
+  margin-top: 2px;
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+}
+/* analysis details */
+.analysis {
+  background-color: var(--whiteColor);
+  display: flex;
+  width: 100%;
+  margin: 20px 10px;
+  padding: 20px;
+  justify-content: space-between;
+  border: none;
+  border-radius: 6px;
+  gap: 100px;
+}
+.analysis .card {
+  background-color: var(--greyColor);
+  width:300px;
+  height: 120px;
+  border: none;
+  border-radius: 6px;
+  padding: 0 10px;
+  margin: 0;
+
+}
+.analysis .card div{
+    /* background-color: red; */
+    align-items: center;
+    display: flex;
+   
+}
+.analysis .card div p{
+    font-size: 20px;
+    color: var(--primaryColor);
+    margin-left: 20px;
+}
+.analysis .card i{
+    color: var(--primaryColor);
+    font-size: 40px;
+}
+.analysis .card .num {
+  color: var(--primaryColor);
+  font-size: 30px;
+  font-weight: 600;
+  margin-left: 20px;
+  margin-top: 0;
+}
+.hide{
+    display: none;
+}
+/* request */
+.request{
+    background-color: var(--whiteColor);
+    margin-left: 10px;
+    border: none;
+    border-radius: 6px;
+    padding: 20px;
+    max-width: 65%;
+    width:100%;
+}
+.request h2{
+    color: var(--primaryColor);
+    align-items: center;
+    margin-left: 40%;
+}
+.request td a{
+    background-color: var(--gold);
+    padding: 0 5px;
+    text-decoration: none;
+    color: var(--whiteColor);
+    border-radius: 6px;
+}
+.request td .cancel{
+    background-color: #646464;
+}
+.request td .check{
+    background-color: var(--blue-color);
+}
+
+/* add users */
+.add{
+    background-color: var(--whiteColor);
+    width: 350px;
+    border-radius: 8px;
+    border: none;
+    padding: 20px;
+    position: fixed;
+    margin-left: 53.5%;
+    top: 270px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.add .add-card{
+    background-color: #65bdae;
+    text-decoration: none;
+    width: 100%;
+    margin-top: 10px;
+    height: 100px;
+    border: none;
+    border-radius: 8px;
+}
+#adddoctor{
+    background-color: #81bd63;
+}
+#addadmin{
+    background-color: #d7d57c;
+}
+.add .add-card i{
+    background-color: var(--whiteColor);
+    width: 50px;
+    height: 50px;
+    font-size: 45px;
+    border-radius: 100px;
+    align-items: center;
+    overflow: hidden;
+    padding: 0;
+    color: var(--primaryColor);
+}
+.add .add-card a{
+    text-decoration: none;
+    color: var(--whiteColor);
+    font-size: 20px;
+}

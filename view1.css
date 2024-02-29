@@ -1,0 +1,102 @@
+:root {
+    --primaryColor: #076297;
+    --secondaryColor: #d1e6f0;
+    --blue-color: rgb(0, 128, 255);
+    --whiteColor: #fff;
+    --blackColor: #222;
+    --greyColor: #f5f5f5;
+    --gold: #CC9A33;
+}
+
+body {
+    font-family: poppins;
+    background-color: var(--secondaryColor);
+}
+.main{
+    background-color: var(--greyColor);
+    padding: 20px;
+    border-radius: 12px;
+    width: 100%;
+    top: 20%;
+    
+}
+
+.doctor-details {
+    /* background-color: greenyellow; */
+    /* width: 100%; */
+    display: flex;
+    padding: 0 50px;
+}
+
+.close-btn {
+    font-size: 30px;
+    margin-left: 95%;
+    color: var(--primaryColor);
+    /* background-color: red; */
+    width: 25px;
+    height: 40px;
+    padding: 0;
+}
+
+.close-btn a .close {
+    color: var(--primaryColor);
+}
+
+.close-btn a .close:hover {
+    box-shadow: rgba(25, 25, 26, 0.2) 0px 8px 24px;
+}
+.main h2{
+    /* background-color: red; */
+    margin: 0;
+    color: var(--primaryColor);
+}
+
+.doctor-details .details {
+    color: var(--primaryColor);
+    margin-top: 10px;
+}
+
+.doctor-details img {
+    border-radius: 8px;
+}
+
+.schedule{
+    /* background-color: #5f7f8f; */
+    width: 100%;
+    margin-left: 70px;
+}
+.line {
+    width: 100%;
+    background-color: var(--primaryColor);
+    height: 2px;
+}
+.title{
+    display: flex;
+    /* background-color: #076297; */
+    justify-content: space-between;
+    width:50%;
+    padding: 0 10px;
+}
+.time{
+    /* background-color: #CC9A33; */
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+.time .select-time{
+    /* background-color: #076297; */
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 11px;
+}
+.time .select-time div{
+    margin-left: 20px;
+}
+
+.book {
+    text-decoration: none;
+    background-color: red;
+}
+
+
