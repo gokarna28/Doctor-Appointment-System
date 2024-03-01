@@ -58,7 +58,7 @@
                         <div>" . $result['fullname'] . "</div>
                         <div>" . $result['speciality'] . "</div>
                         <div class='view-btn'>
-                        <a href=\"view.php?id=" . $result['id'] . "\">Appointment</a>
+                         <a href=\"view.php?id=" . $result['id'] ."\">Appointment</a>
                             
                         </div>  
                         </div>";

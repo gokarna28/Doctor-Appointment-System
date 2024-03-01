@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>doctor view</title>
-    <link rel="stylesheet" href="view1.css">
+    <link rel="stylesheet" href="view.css">
     <!-- Link to Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <!-- Import Google font - Poppins  -->
@@ -27,18 +27,18 @@
             include("connection.php");
             error_reporting(E_ALL);
 
-            $ID = $_GET['id'];
+            $ID= $_GET['id'];
 
             // $query = "SELECT *
             // FROM doctor 
-            // INNER JOIN schedule ON doctor.fullname = schedule.fullname WHERE status='approved' && id=$ID ";
+            // INNER JOIN schedule ON doctor.fullname = schedule.fullname WHERE status='approved' && fullname='$fullname' ";
             
-            $query = "SELECT * FROM doctor WHERE status='approved' && id=$ID ";
+            $query = "SELECT * FROM doctor WHERE status='approved' && id='$ID' ";
             $data = mysqli_query($conn, $query);
             if ($data) {
                 if (mysqli_num_rows($data) > 0) {
 
-                    while ($result = mysqli_fetch_assoc($data)) {
+                    $result = mysqli_fetch_assoc($data) ;
                         echo "
                         <div class='doctor-card'>
                         
@@ -58,7 +58,7 @@
                 } else {
                     echo "No records";
                 }
-            }
+            
 
             ?>
             <div class='schedule'>
@@ -69,10 +69,10 @@
                 </div>
 
                 <?php
-                include("connection.php");
-                error_reporting(E_ALL);
+                // include("connection.php");
+                // error_reporting(E_ALL);
 
-                $ID = $_GET['id'];
+                // $fullname = $_GET['fullname'];
 
                 $query = "SELECT *
             FROM doctor 
@@ -85,17 +85,17 @@
                             echo "
                         <div class='time'>
                         <div class='select-time'>
-                            <div>" . $result['date'] . "</div>
-                            <div>" . $result['slot1'] . "</div>
-                            <div>" . $result['slot2'] . "</div>
-                            <div>" . $result['slot3'] . "</div>
-                            <div>" . $result['slot4'] . "</div>
-                            <div>" . $result['slot5'] . "</div>
-                            <div>" . $result['slot6'] . "</div>
-                            <div>" . $result['slot7'] . "</div>
-                            <div>" . $result['slot8'] . "</div>
-                            <div>" . $result['slot9'] . "</div>
-                            <div>" . $result['slot10'] . "</div>
+                            <div class='date'>" . $result['date'] . "</div>
+                            <div class='tt'>" . $result['slot1from'] . " <span>to</span>" . $result['slot1to'] . "</div> 
+                
+                            <div class='tt'>" . $result['slot2from'] . "<span>to</span>" . $result['slot2to'] . "</div> 
+                            
+                            <div class='tt'>" . $result['slot3from'] . "<span>to</span>" . $result['slot3to'] . "</div> 
+                            
+                            <div class='tt'>" . $result['slot4from'] . "<span>to</span>" . $result['slot4to'] . "</div> 
+                         
+                            <div class='tt'>" . $result['slot5from'] . "<span>to</span>" . $result['slot5to'] . "</div> 
+                           
                             </div>
 
                             <div class='book'>

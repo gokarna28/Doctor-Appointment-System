@@ -58,12 +58,25 @@
         .record td .cancel {
             background-color: red;
         }
+
+        .close-btn {
+            font-size: 30px;
+            margin: 0 95%;
+            color: var(--primaryColor);
+        }
+
+        .close-btn a .close {
+            color: var(--primaryColor);
+        }
     </style>
 </head>
 
 <body>
     <!-- doctor record -->
     <div class="record">
+        <div class="close-btn">
+            <a href="admin.php"><i class="fas fa-times close"></i></a>
+        </div>
         <h2>Doctor records</h2>
 
         <table>
@@ -124,8 +137,8 @@
     </div>
     <script>
         //delete confirmation
-        function delete(){
-            if(confirm("Are you sure to delete this data.")){
+        function delete (){
+            if (confirm("Are you sure to delete this data.")) {
 
             }
         }

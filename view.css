@@ -18,7 +18,7 @@ body {
     border-radius: 12px;
     width: 100%;
     top: 20%;
-    
+    position: relative;
 }
 
 .doctor-details {
@@ -63,7 +63,7 @@ body {
 .schedule{
     /* background-color: #5f7f8f; */
     width: 100%;
-    margin-left: 70px;
+    margin-left: 50px;
 }
 .line {
     width: 100%;
@@ -88,15 +88,37 @@ body {
     /* background-color: #076297; */
     display: flex;
     flex-wrap: wrap;
-    font-size: 11px;
+    font-size: 15px;
 }
-.time .select-time div{
-    margin-left: 20px;
+.time .select-time .tt{
+    background-color: var(--whiteColor);
+    margin-left: 30px;
+    border: 1px solid black;
+    border-radius: 6px;
+    color: var(--primaryColor);
+    padding: 0 5px;
+    font-weight: 500;
+}
+.time .select-time .date{
+    color: var(--gold);
+    font-weight: 500;
+}
+.time .select-time span{
+    /* background-color: #CC9A33; */
+    padding: 0 10px;
 }
 
-.book {
+.book a{
+    background-color: var(--primaryColor);
     text-decoration: none;
-    background-color: red;
+    border: 1px solid var(--blackColor);
+    border-radius: 6px;
+    color: var(--whiteColor);
+    padding: 5px 20px;
+    font-weight: 500;
+
+
 }
+
 
 

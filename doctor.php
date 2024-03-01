@@ -16,7 +16,7 @@ if (!isset($_SESSION['email'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Doctor pannel</title>
     <link rel="stylesheet" href="admin1.css" />
-    <link rel="stylesheet" href="doctor1.css" />
+    <link rel="stylesheet" href="doctor.css" />
     <!-- Link to Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <!-- Import Google font - Poppins  -->
@@ -104,32 +104,23 @@ if (!isset($_SESSION['email'])) {
 
         $nameError = "";
         $dateError = "";
-        $slot1Error = "";
-        $slot2Error = "";
-        $slot3Error = "";
-        $slot4Error = "";
-        $slot5Error = "";
-        $slot6Error = "";
-        $slot7Error = "";
-        $slot8Error = "";
-        $slot9Error = "";
-        $slot10Error = "";
 
         if (isset($_POST['submit'])) {
 
             $fullname = $_POST['fullname'];
             $date = $_POST['date'];
 
-            $slot1 = isset($_POST['slot1']) ? $_POST['slot1'] : "";
-            $slot2 = isset($_POST['slot2']) ? $_POST['slot2'] : "";
-            $slot3 = isset($_POST['slot3']) ? $_POST['slot3'] : "";
-            $slot4 = isset($_POST['slot4']) ? $_POST['slot4'] : "";
-            $slot5 = isset($_POST['slot5']) ? $_POST['slot5'] : "";
-            $slot6 = isset($_POST['slot6']) ? $_POST['slot6'] : "";
-            $slot7 = isset($_POST['slot7']) ? $_POST['slot7'] : "";
-            $slot8 = isset($_POST['slot8']) ? $_POST['slot8'] : "";
-            $slot9 = isset($_POST['slot9']) ? $_POST['slot9'] : "";
-            $slot10 = isset($_POST['slot10']) ? $_POST['slot10'] : "";
+            $slot1from = date("g:i A", strtotime($time = $_POST['slot1from']));
+            $slot1to = date("g:i A", strtotime($time = $_POST['slot1to']));
+            $slot2from = date("g:i A", strtotime($time = $_POST['slot2from']));
+            $slot2to = date("g:i A", strtotime($time = $_POST['slot2to']));
+            $slot3from = date("g:i A", strtotime($time = $_POST['slot3from']));
+            $slot3to = date("g:i A", strtotime($time = $_POST['slot3to']));
+            $slot4from = date("g:i A", strtotime($time = $_POST['slot4from']));
+            $slot4to = date("g:i A", strtotime($time = $_POST['slot4to']));
+            $slot5from = date("g:i A", strtotime($time = $_POST['slot5from']));
+            $slot5to = date("g:i A", strtotime($time = $_POST['slot5to']));
+
 
             //validation
             if (empty($fullname)) {
@@ -138,37 +129,6 @@ if (!isset($_SESSION['email'])) {
             if (empty($date)) {
                 $dateError = "date required";
             }
-            // if (!empty($slot1 == $slot2 || $slot1 == $slot3 || $slot1 == $slot4 || $slot1 == $slot5 || $slot1 == $slot6 || $slot1 == $slot7 || $slot1 == $slot8 || $slot1 == $slot9 || $slot1 == $slot10)) {
-            //     $slot1Error = "already taken";
-            // }
-            // if ($slot2 == $slot1 || $slot2 == $slot3 || $slot2 == $slot4 || $slot2 == $slot5 || $slot2 == $slot6 || $slot2 == $slot7 || $slot2 == $slot8 || $slot2 == $slot9 || $slot2 == $slot10) {
-            //     $slot2Error = "already taken";
-            // }
-            // if ($slot3 == $slot2 || $slot3 == $slot1 || $slot3 == $slot4 || $slot3 == $slot5 || $slot3 == $slot6 || $slot3 == $slot7 || $slot3 == $slot8 || $slot3 == $slot9 || $slot3 == $slot10) {
-            //     $slot3Error = "already taken";
-            // }
-            // if ($slot4 == $slot2 || $slot4 == $slot3 || $slot4 == $slot1 || $slot4 == $slot5 || $slot4 == $slot6 || $slot4 == $slot7 || $slot4 == $slot8 || $slot4 == $slot9 || $slot4 == $slot10) {
-            //     $slot4Error = "already taken";
-            // }
-            // if ($slot5 == $slot2 || $slot5 == $slot3 || $slot5 == $slot4 || $slot5 == $slot1 || $slot5 == $slot6 || $slot5 == $slot7 || $slot5 == $slot8 || $slot5 == $slot9 || $slot5 == $slot10) {
-            //     $slot5Error = "already taken";
-            // }
-            // if ($slot6 == $slot2 || $slot6 == $slot3 || $slot6 == $slot4 || $slot6 == $slot5 || $slot6 == $slot1 || $slot6 == $slot7 || $slot6 == $slot8 || $slot6 == $slot9 || $slot6 == $slot10) {
-            //     $slot6Error = "already taken";
-            // }
-            // if ($slot7 == $slot2 || $slot7 == $slot3 || $slot7 == $slot4 || $slot7 == $slot5 || $slot7 == $slot6 || $slot7 == $slot1 || $slot7 == $slot8 || $slot7 == $slot9 || $slot7 == $slot10) {
-            //     $slot7Error = "already taken";
-            // }
-            // if ($slot8 == $slot2 || $slot8 == $slot3 || $slot8 == $slot4 || $slot8 == $slot5 || $slot8 == $slot6 || $slot8 == $slot7 || $slot8 == $slot1 || $slot8 == $slot9 || $slot8 == $slot10) {
-            //     $slot8Error = "already taken";
-            // }
-            // if ($slot9 == $slot2 || $slot9 == $slot3 || $slot9 == $slot4 || $slot9 == $slot5 || $slot9 == $slot6 || $slot9 == $slot7 || $slot9 == $slot8 || $slot9 == $slot9 || $slot9 == $slot10) {
-            //     $slot9Error = "already taken";
-            // }
-            // if ($slot10 == $slot2 || $slot10 == $slot3 || $slot10 == $slot4 || $slot10 == $slot5 || $slot10 == $slot6 || $slot10 == $slot7 || $slot10 == $slot8 || $slot10 == $slot9 || $slot10 == $slot1) {
-            //     $slot10Error = "already taken";
-            // }
-        
 
             if (empty($nameError) && empty($dateError)) {
 
@@ -184,8 +144,8 @@ if (!isset($_SESSION['email'])) {
 
                     } else {
 
-                        $query = "INSERT INTO schedule(fullname,date,slot1,slot2,slot3,slot4,slot5,slot6,slot7,slot8,slot9,slot10)
-VALUES('$fullname','$date','$slot1','$slot2','$slot3','$slot4','$slot5','$slot6','$slot7','$slot8','$slot9','$slot10')";
+                        $query = "INSERT INTO schedule(fullname,date,slot1from,slot1to,slot2from,slot2to,slot3from,slot3to,slot4from,slot4to,slot5from,slot5to)
+VALUES('$fullname','$date','$slot1from','$slot1to','$slot2from','$slot2to','$slot3from','$slot3to','$slot4from','$slot4to','$slot5from','$slot5to')";
                         $data = mysqli_query($conn, $query);
                         if ($data) {
                             echo "data inserted sucessfully";
@@ -199,17 +159,20 @@ VALUES('$fullname','$date','$slot1','$slot2','$slot3','$slot4','$slot5','$slot6'
         }
         ?>
 
-
+        <!-- schedule -->
         <div class=" set-schedule">
             <h2 align='center'>Set your Schedule</h2>
 
             <form action="#" method="post">
+                <p>Note: You can set maximum five appointments in a day. </p>
+
                 <div class="form-wrapper">
 
                     <div class="input-field">
                         <div>
                             <label>Fullname:</label><br>
-                            <input type="text" name="fullname" placeholder="enter your fullname"><br>
+                            <input type="text" name="fullname" placeholder="enter your fullname"
+                                value="<?php echo $_SESSION['fullname']; ?>"><br>
                             <span style='color:red; font-size:11px;'>
                                 <?php echo $nameError ?>
                             </span>
@@ -225,185 +188,31 @@ VALUES('$fullname','$date','$slot1','$slot2','$slot3','$slot4','$slot5','$slot6'
 
                     <div class="time">
                         <div>
-                            <select name="slot1">
-                                <option disabled selected>Set your schedule</option>
-                                <option>10:00 AM-10:30 AM</option>
-                                <option>10:30 AM-11:00 AM</option>
-                                <option>11:00 AM-11:30 AM</option>
-                                <option>11:30 AM-12:00 PM</option>
-                                <option>12:00 PM-12:30 PM</option>
-                                <option>12:30 PM-01:00 PM</option>
-                                <option>02:00 PM-02:30 PM</option>
-                                <option>02:30 PM-03:00 PM</option>
-                                <option>03:00 PM-03:30 PM</option>
-                                <option>03:30 PM-04:00 PM</option>
-                            </select>
-                            <span style='color:red; font-size:11px;'>
-                                <?php echo $slot1Error ?>
-                            </span>
+                            <input type="time" name="slot1from">
+                            to
+                            <input type="time" name="slot1to">
                         </div>
                         <div>
-                            <select name="slot2">
-                                <option disabled selected>Set your schedule</option>
-                                <option>10:00 AM-10:30 AM</option>
-                                <option>10:30 AM-11:00 AM</option>
-                                <option>11:00 AM-11:30 AM</option>
-                                <option>11:30 AM-12:00 PM</option>
-                                <option>12:00 PM-12:30 PM</option>
-                                <option>12:30 PM-01:00 PM</option>
-                                <option>02:00 PM-02:30 PM</option>
-                                <option>02:30 PM-03:00 PM</option>
-                                <option>03:00 PM-03:30 PM</option>
-                                <option>03:30 PM-04:00 PM</option>
-                            </select>
-                            <span style='color:red; font-size:11px;'>
-                                <?php echo $slot2Error ?>
-                            </span>
+                            <input type="time" name="slot2from">
+                            to
+                            <input type="time" name="slot2to">
                         </div>
                         <div>
-                            <select name="slot3">
-                                <option disabled selected>Set your schedule</option>
-                                <option>10:00 AM-10:30 AM</option>
-                                <option>10:30 AM-11:00 AM</option>
-                                <option>11:00 AM-11:30 AM</option>
-                                <option>11:30 AM-12:00 PM</option>
-                                <option>12:00 PM-12:30 PM</option>
-                                <option>12:30 PM-01:00 PM</option>
-                                <option>02:00 PM-02:30 PM</option>
-                                <option>02:30 PM-03:00 PM</option>
-                                <option>03:00 PM-03:30 PM</option>
-                                <option>03:30 PM-04:00 PM</option>
-                            </select>
-                            <span style='color:red; font-size:11px;'>
-                                <?php echo $slot3Error ?>
-                            </span>
+                            <input type="time" name="slot3from">
+                            to
+                            <input type="time" name="slot3to">
                         </div>
                         <div>
-                            <select name="slot4">
-                                <option disabled selected>Set your schedule</option>
-                                <option>10:00 AM-10:30 AM</option>
-                                <option>10:30 AM-11:00 AM</option>
-                                <option>11:00 AM-11:30 AM</option>
-                                <option>11:30 AM-12:00 PM</option>
-                                <option>12:00 PM-12:30 PM</option>
-                                <option>12:30 PM-01:00 PM</option>
-                                <option>02:00 PM-02:30 PM</option>
-                                <option>02:30 PM-03:00 PM</option>
-                                <option>03:00 PM-03:30 PM</option>
-                                <option>03:30 PM-04:00 PM</option>
-                            </select>
-                            <span style='color:red; font-size:11px;'>
-                                <?php echo $slot4Error ?>
-                            </span>
+                            <input type="time" name="slot4from">
+                            to
+                            <input type="time" name="slot4to">
                         </div>
                         <div>
-                            <select name="slot5">
-                                <option disabled selected>Set your schedule</option>
-                                <option>10:00 AM-10:30 AM</option>
-                                <option>10:30 AM-11:00 AM</option>
-                                <option>11:00 AM-11:30 AM</option>
-                                <option>11:30 AM-12:00 PM</option>
-                                <option>12:00 PM-12:30 PM</option>
-                                <option>12:30 PM-01:00 PM</option>
-                                <option>02:00 PM-02:30 PM</option>
-                                <option>02:30 PM-03:00 PM</option>
-                                <option>03:00 PM-03:30 PM</option>
-                                <option>03:30 PM-04:00 PM</option>
-                            </select>
-                            <span style='color:red; font-size:11px;'>
-                                <?php echo $slot5Error ?>
-                            </span>
+                            <input type="time" name="slot5from">
+                            to
+                            <input type="time" name="slot5to">
                         </div>
-                        <div>
-                            <select name="slot6">
-                                <option disabled selected>Set your schedule</option>
-                                <option>10:00 AM-10:30 AM</option>
-                                <option>10:30 AM-11:00 AM</option>
-                                <option>11:00 AM-11:30 AM</option>
-                                <option>11:30 AM-12:00 PM</option>
-                                <option>12:00 PM-12:30 PM</option>
-                                <option>12:30 PM-01:00 PM</option>
-                                <option>02:00 PM-02:30 PM</option>
-                                <option>02:30 PM-03:00 PM</option>
-                                <option>03:00 PM-03:30 PM</option>
-                                <option>03:30 PM-04:00 PM</option>
-                            </select>
-                            <span style='color:red; font-size:11px;'>
-                                <?php echo $slot6Error ?>
-                            </span>
-                        </div>
-                        <div>
-                            <select name="slot7">
-                                <option disabled selected>Set your schedule</option>
-                                <option>10:00 AM-10:30 AM</option>
-                                <option>10:30 AM-11:00 AM</option>
-                                <option>11:00 AM-11:30 AM</option>
-                                <option>11:30 AM-12:00 PM</option>
-                                <option>12:00 PM-12:30 PM</option>
-                                <option>12:30 PM-01:00 PM</option>
-                                <option>02:00 PM-02:30 PM</option>
-                                <option>02:30 PM-03:00 PM</option>
-                                <option>03:00 PM-03:30 PM</option>
-                                <option>03:30 PM-04:00 PM</option>
-                            </select>
-                            <span style='color:red; font-size:11px;'>
-                                <?php echo $slot7Error ?>
-                            </span>
-                        </div>
-                        <div>
-                            <select name="slot8">
-                                <option disabled selected>Set your schedule</option>
-                                <option>10:00 AM-10:30 AM</option>
-                                <option>10:30 AM-11:00 AM</option>
-                                <option>11:00 AM-11:30 AM</option>
-                                <option>11:30 AM-12:00 PM</option>
-                                <option>12:00 PM-12:30 PM</option>
-                                <option>12:30 PM-01:00 PM</option>
-                                <option>02:00 PM-02:30 PM</option>
-                                <option>02:30 PM-03:00 PM</option>
-                                <option>03:00 PM-03:30 PM</option>
-                                <option>03:30 PM-04:00 PM</option>
-                            </select>
-                            <span style='color:red; font-size:11px;'>
-                                <?php echo $slot8Error ?>
-                            </span>
-                        </div>
-                        <div>
-                            <select name="slot9">
-                                <option disabled selected>Set your schedule</option>
-                                <option>10:00 AM-10:30 AM</option>
-                                <option>10:30 AM-11:00 AM</option>
-                                <option>11:00 AM-11:30 AM</option>
-                                <option>11:30 AM-12:00 PM</option>
-                                <option>12:00 PM-12:30 PM</option>
-                                <option>12:30 PM-01:00 PM</option>
-                                <option>02:00 PM-02:30 PM</option>
-                                <option>02:30 PM-03:00 PM</option>
-                                <option>03:00 PM-03:30 PM</option>
-                                <option>03:30 PM-04:00 PM</option>
-                            </select>
-                            <span style='color:red; font-size:11px;'>
-                                <?php echo $slot9Error ?>
-                            </span>
-                        </div>
-                        <div>
-                            <select name="slot10">
-                                <option disabled selected>Set your schedule</option>
-                                <option>10:00 AM-10:30 AM</option>
-                                <option>10:30 AM-11:00 AM</option>
-                                <option>11:00 AM-11:30 AM</option>
-                                <option>11:30 AM-12:00 PM</option>
-                                <option>12:00 PM-12:30 PM</option>
-                                <option>12:30 PM-01:00 PM</option>
-                                <option>02:00 PM-02:30 PM</option>
-                                <option>02:30 PM-03:00 PM</option>
-                                <option>03:00 PM-03:30 PM</option>
-                                <option>03:30 PM-04:00 PM</option>
-                            </select>
-                            <span style='color:red; font-size:11px;'>
-                                <?php echo $slot10Error ?>
-                            </span>
-                        </div>
+
                     </div>
                 </div>
 
@@ -416,7 +225,7 @@ VALUES('$fullname','$date','$slot1','$slot2','$slot3','$slot4','$slot5','$slot6'
     </div>
 
     <script>
-        function toggleprofile(){
+        function toggleprofile() {
             document.querySelector(".profile-data").classList.toggle("hide");
 
         }

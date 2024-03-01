@@ -59,12 +59,16 @@
 .set-schedule h2 {
     color: var(--primaryColor);
 }
+.set-schedule form p{
+    color: var(--blue-color);
+    margin-left: 60%;
+}
 
 .form-wrapper {
     display: flex;
     /* flex-wrap: wrap; */
     /* background-color: #cc9a33; */
-    padding: 0 80px;
+    padding: 0 20px;
 }
 
 .set-schedule .input-field {
@@ -89,14 +93,14 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    padding: 0 50px;
 }
 
 .time div {
-    margin: 10px;
+    margin: 10px 50px;
+    /* background-color: #076297; */
 }
 
-.time div select {
+.time div input {
     font-size: 20px;
     border-radius: 6px;
     color: var(--primaryColor);
